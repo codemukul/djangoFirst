@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #our_apps
     'home',
+    'notes',
 ]
 
 MIDDLEWARE = [
