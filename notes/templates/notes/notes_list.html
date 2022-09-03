@@ -10,10 +10,9 @@
     <h1>Welcome to my Blog !!</h1>
     <ol>
         {% for note in notes %}
-            <li>{{note.title}}</li>
-            <p>{{note.created}}</p>
-            <p><strong>{{note.text}}</strong></p>
-            <br><br><br><br>
+            <li>{{note.title}}   &nbsp;&nbsp;&nbsp; <p>{{note.created}}</p> </li>
+            <!-- <p><strong>{{note.text}}</strong></p> -->
+            <!-- <br><br><br><br> -->
         {% endfor %}
     </ol>
 </body>

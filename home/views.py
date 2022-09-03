@@ -2,12 +2,23 @@ import imp
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
-from django.contrib.auth.decorators import login_required
-# Create your views here.
+# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-def home(request):
-    return render(request, 'home/welcome.html' , {'today':datetime.today()})
+from django.views.generic import TemplateView
 
-@login_required(login_url='/admin')
-def authorized(request):
-    return render(request, 'home/authorized.html' , {})
+
+class Homeview(TemplateView):
+    template_name = 'home/welcome.html'
+    extra_context = {'today':datetime.today()}
+
+class Authorizedview(LoginRequiredMixin ,TemplateView):
+    template_name = 'home/authorized.html'
+    login_url = '/admin'
+
+# def home(request):
+#     return render(request, 'home/welcome.html' , {'today':datetime.today()})
+
+# @login_required(login_url='/admin')
+# def authorized(request):
+#     return render(request, 'home/authorized.html' , {})
