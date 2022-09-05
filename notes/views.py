@@ -1,34 +1,50 @@
+from http.client import HTTPResponse
+from django.http.response import HttpResponseRedirect
 from msilib.schema import ListView
 from django.shortcuts import render
 from django.http import Http404
 from django.views.generic import CreateView,DetailView, ListView,UpdateView
 from django.views.generic.edit import DeleteView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .forms import NotesForm
 
 from .models import Notes
 
-class NotesDeleteView(DeleteView):
+class NotesDeleteView(LoginRequiredMixin, DeleteView):
     model = Notes
     success_url = '/smart'
     template_name = 'notes/notes_delete.html'
 
-class NotesUpdateView(UpdateView):
+class NotesUpdateView(LoginRequiredMixin, UpdateView):
     model = Notes
     success_url = '/smart'
     form_class = NotesForm
 
-class NotesCreateView(CreateView):
+class NotesCreateView(LoginRequiredMixin, CreateView):
     model = Notes
     success_url = '/smart'
     form_class = NotesForm
+    login_url = '/admin'
 
-class NotesListView(ListView):
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+
+class NotesListView(LoginRequiredMixin, ListView):
     model = Notes
     context_object_name = "notes"
+    login_url = '/admin'
+
+    def get_queryset(self):
+        return self.request.user.notes.all()
     # template_name = "notes/notes_list.html" (not required because we have named as the standard name of class , so it automatically fetches it .....)
 
-class NotesDetailView(DetailView):
+class NotesDetailView(LoginRequiredMixin, DetailView):
     model = Notes
     context_object_name = "note"
     # template_name = "notes/notes_detail.html"
