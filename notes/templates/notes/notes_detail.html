@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="border round">
+    <h1 class="my-5">{{note.title}}</h1>
+    <h6>{{note.created}}</h6>
+    <hr>
+    <p>{{note.text}}</p>
+</div>
+
+<a href="{% url 'notes.list' %}" class="btn btn-primary">Back</a>
+<a href="{% url 'notes.update' pk=note.id %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'notes.delete' pk=note.id %}" class="btn btn-danger">Delete</a>
+
+{% endblock %}
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,4 +29,4 @@
     <hr>
     <p>{{note.text}}</p>
 </body>
-</html>
+</html> -->

@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-u-4#2kc9+4a163klz&9e2vnj3u2+7irfl5m$_a-3_h724=84m3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+]
 
 
 # Application definition
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'muk.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'static/templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

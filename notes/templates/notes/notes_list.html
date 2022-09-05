@@ -1,4 +1,27 @@
-{% load static %}
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="my-5">Welcome to my Blog !!!</h1>
+<a href="{% url 'notes.new' %}" class="btn btn-primary">Create new blog</a>
+<br><br>
+    <div class="row row-cols3 g-2">
+        {% for note in notes %}
+        <div class="col">
+            <div class="p-3 border">
+                <a href="{% url 'notes.detail' pk=note.id %}" class="text-decoration-none">
+                    <h2 class="note-li">{{note.title}}</h2>
+                </a>
+                <h6>{{note.created}}</h6>
+                <em>{{note.text|truncatechars:20}}</em>
+                <!-- <p><strong>{{note.text}}</strong></p> -->
+                <!-- <br><br><br><br> -->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+<!-- {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,4 +42,6 @@
         {% endfor %}
     </ol>
 </body>
-</html>
+</html> -->
+
+
