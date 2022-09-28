@@ -1,8 +1,8 @@
-from http.client import HTTPResponse
+# from http.client import HTTPResponse
 from django.http.response import HttpResponseRedirect
 # from msilib.schema import ListView
-from django.shortcuts import render
-from django.http import Http404
+# from django.shortcuts import render
+# from django.http import Http404
 from django.views.generic import CreateView,DetailView, ListView,UpdateView
 from django.views.generic.edit import DeleteView
 
