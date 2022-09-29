@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-u-4#2kc9+4a163klz&9e2vnj3u2+7irfl5m$_a-3_h724=84m3
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'codemukul.tech'
-    '159.65.144.177'
+    'codemukul.tech',
+    '159.65.144.177',
 ]
 
 
