@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'codemukul.tech',
-    '206.189.137.235',
+    '139.59.41.48',
 ]
 
 
