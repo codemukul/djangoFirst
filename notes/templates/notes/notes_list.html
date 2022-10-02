@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="my-5">Welcome to my Blog !!!</h1>
-<a href="{% url 'notes.new' %}" class="btn btn-primary">Create new blog</a>
+<h2 class="my-5">Welcome , Here are your notes.</h2>
+<a href="{% url 'notes.new' %}" class="btn btn-primary">New note</a>
+<br><br>
+<h7>Click a note to open it </h7>
 <br><br>
     <div class="row row-cols3 g-2">
         {% for note in notes %}
