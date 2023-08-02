@@ -23,14 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u-4#2kc9+4a163klz&9e2vnj3u2+7irfl5m$_a-3_h724=84m3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://notesapp.azurewebsites.net',
                  'localhost',
                  '20.119.8.45',
                  'notesapp.azurewebsites.net',
                  'notes.codemukul.tech',
-                 'codemukul.tech']
+                 'codemukul.tech',
+                 'notesapp.azurewebsites.net/']
 
 
 # Application definition
