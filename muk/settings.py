@@ -23,17 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u-4#2kc9+4a163klz&9e2vnj3u2+7irfl5m$_a-3_h724=84m3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['notesapp.azurewebsites.net',
                  'notes.codemukul.tech',
-                 'http://notesapp.azurewebsites.net',
-                 'http://notes.codemukul.tech']
+                 '*']
 
 CSRF_TRUSTED_ORIGINS = ['https://notesapp.azurewebsites.net',
                         'http://notes.codemukul.tech',
-                        'notesapp.azurewebsites.net',
-                        'notes.codemukul.tech']
+                        'https://cuddly-doodle-4rqp756rgwj3q7x7-8000.preview.app.github.dev']
 
 
 # Application definition
