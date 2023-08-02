@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-u-4#2kc9+4a163klz&9e2vnj3u2+7irfl5m$_a-3_h724=84m3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://notesapp.azurewebsites.net/']
+ALLOWED_HOSTS = ['https://notesapp.azurewebsites.net',
+                 'localhost',
+                 '20.119.8.45',
+                 'notesapp.azurewebsites.net',
+                 'notes.codemukul.tech',
+                 'codemukul.tech']
 
 
 # Application definition
